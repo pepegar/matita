@@ -4,6 +4,7 @@ package matita;
 
 service GraphStore {
   rpc WriteTriples(WriteRequest) returns (WriteResponse);
+  rpc GetTriples(GetTriplesRequest) returns (GetTriplesResponse);
 }
 
 message Triple {
@@ -18,4 +19,11 @@ message WriteRequest {
 
 message WriteResponse {
   bool success = 1;
+}
+
+message GetTriplesRequest {
+}
+
+message GetTriplesResponse {
+  repeated Triple triples = 1;
 }
