@@ -18,6 +18,8 @@ impl GraphStore for MatitaServer {
         &'a self,
         _request: Request<WriteRequest>,
     ) -> Result<Response<WriteResponse>, Status> {
-        todo!()
+        let reply = WriteResponse { success: true };
+
+        Ok(Response::new(reply))
     }
 }
