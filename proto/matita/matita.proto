@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package matita;
+
+service GraphStore {
+  rpc WriteTriples(WriteRequest) returns (WriteResponse);
+}
+
+message Triple {
+  string subject = 1;
+  string predicate = 2;
+  string object = 3;
+}
+
+message WriteRequest {
+  repeated Triple triples = 1;
+}
+
+message WriteResponse {
+  bool success = 1;
+}
