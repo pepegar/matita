@@ -2,6 +2,8 @@ use dashmap::DashMap;
 use server::{matita::graph_store_server::GraphStoreServer, MatitaServer};
 use tonic::transport::Server;
 
+mod parser;
+mod query;
 mod server;
 
 #[tokio::main]
